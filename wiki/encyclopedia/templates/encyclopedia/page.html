@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {% if not entry %}
+        Den sökta titeln kunde ledsamt nog inte hittas
+    {% else %}
+        {{ titel|safe }}
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    {% if not entry %}
+        <h1> Sök gjärna rätt nästa gång </h1>
+    {% else %}
+        {{ entry|safe }}
+    {% endif %}
+    <a href="{% url 'edit' title.strip %}">Redigera sidan</a>
+{% endblock %}
+

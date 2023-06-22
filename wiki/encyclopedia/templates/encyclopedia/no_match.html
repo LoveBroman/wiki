@@ -1,0 +1,15 @@
+{% extends 'encyclopedia/layout.html' %}  <!-- Replace with your base template -->
+
+{% block title %}
+    Sökningen hittades ej
+{% endblock %}
+
+{% block body %}
+<h2>No Results Found</h2>
+<p>Your search for "{{ query }}" did not match any pages.</p>
+    <ul>
+        {% for s in substrings %}
+            <li> <a href={{ s.0 }}>{{ s.1 }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

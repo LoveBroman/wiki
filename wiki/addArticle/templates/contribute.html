@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+    body {
+        padding-top: 50px;
+    }
+
+    .container {
+        max-width: 800px;
+    }
+    </style>
+
+</head>
+<body>
+    <form method="POST" action="{% url 'save_text' %}" id="myForm">
+
+        {% csrf_token %}
+    <div class="form-group">
+        <label for="filename">Filename:</label>
+        {% block title_text%}{% endblock %}
+    </div>
+        <div class="form-group">
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" rows="21" cols="70">{% block default_text%}{% endblock %}</textarea>
+        </div>
+        <input type="submit" value="Save Content">
+    </form>
+
+</body>
+</html>
