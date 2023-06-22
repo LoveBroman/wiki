@@ -1,2 +1,5 @@
 {% extends "contribute.html" %}
- {% block title_text%}<input type="text" id="filename" name="filename" value="123">{% endblock %}
+
+{% block save_method%}{% url 'save_add' %}{% endblock %}
+
+ {% block title_text%}<input type="text" id="filename" name="filename" value="">{% endblock %}

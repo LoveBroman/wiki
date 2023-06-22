@@ -1,0 +1,1 @@
+Ett språk som microsoft skapade med viss inspiration av [Java](wiki/java). Språket används bla i spek utveckling samt webbutveckling via ramverket .net.

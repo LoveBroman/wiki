@@ -6,7 +6,7 @@ from encyclopedia import util, views
 
 
 @csrf_exempt
-def save(request, title=""):
+def save_base(request, title=""):
     if request.method == 'POST':
         content = request.POST.get('content', None)
         filename = request.POST.get('filename', None)
@@ -14,10 +14,14 @@ def save(request, title=""):
         if content:
             util.save_entry(filename, content)
 
-        if len(title) == 0:
-            return redirect('/')
-        else:
-            redirect(f"/{filename}")
+def save_add(request, title=""):
+    save_base(request, title)
+    return redirect('/')
+
+def save_edit(request, title=""):
+    save_base(request, title)
+    filename = request.POST.get('filename', None)
+    return redirect(f"../../wiki/{filename}")
 
 def edit(request, title):
     entry = util.get_entry(title)

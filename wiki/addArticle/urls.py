@@ -7,4 +7,5 @@ from . import views
 urlpatterns = [
                path('adda', views.add, name="add"),
                path('edit/<str:title>/', views.edit, name="edit"),
-               path('save/', views.save, name='save_text')]
+               path('save_add/', views.save_add, name='save_add'),
+               path('save_edit/', views.save_edit, name= 'save_edit')]

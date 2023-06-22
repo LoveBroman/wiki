@@ -16,7 +16,7 @@
 
 </head>
 <body>
-    <form method="POST" action="{% url 'save_text' %}" id="myForm">
+    <form method="POST" action={% block save_method%}{% endblock %} id="myForm">
 
         {% csrf_token %}
     <div class="form-group">

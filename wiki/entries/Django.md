@@ -8,4 +8,3 @@ hoh
 * stål 
 * Kål
 * Bål
-

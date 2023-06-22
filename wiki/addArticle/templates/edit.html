@@ -1,5 +1,7 @@
 {% extends "contribute.html" %}
 
+{% block save_method%}{% url 'save_edit' %}{% endblock %}
+
 {% block title_text%}<input type="text" id="filename" name="filename" value={{ title }}>{% endblock %}
 
 
